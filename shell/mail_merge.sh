@@ -1,6 +1,16 @@
 #!/bin/bash
 
 # check if command line arguments are provided
+# $0 : program name
+# $1, $2, $3, ... command line arguments. Example:
+#
+# ./mail_merge.sh foo bar baz cheese
+#
+# $0 == ./mail_merge.sh
+# $1 == foo
+# $2 == bar
+# $3 == baz
+# $4 == cheese
 if [ -z $1 -o -z $2 ]
 then
     echo "usage: $0 mail_template info_file"
@@ -8,10 +18,12 @@ then
 fi
 
 # get command line arguments
+# variables must be assigned varname=value (no spaces)
 MAIL_FILE=$1
 INFO_FILE=$2
 
 # get the mail template
+# variables can be assigned the value of the output of a command like so:
 template=$(cat $MAIL_FILE)
 
 # create the output directory where the mails will go
@@ -41,5 +53,5 @@ do
     # write message to file in the format first-last-mail.txt
     file=$OUT_DIRECTORY/$first-$last-$MAIL_FILE
     echo $message > $file
-done < $INFO_FILE
+done < $INFO_FILE # feed the contents of the file into the while loop
 
