@@ -4,9 +4,9 @@
 while read line
 do
     # say bye three times
-    for i in 1 2 3
+    for word in bye adios zaijian
     do
         # this sed command replaces all instances of hi with bye
-        echo $line | sed -e "s/hi/bye/g"
+        echo $line | sed -e "s/hi/$word/g"
     done
 done
