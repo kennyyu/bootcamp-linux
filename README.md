@@ -1,4 +1,4 @@
-Codelabs for the Crimson
-========================
+Linux Bootcamp and Writing Shell Scripts
+========================================
 
-See the wiki page (wiki tab above) for documentation and list of available codelabs.
+See the wiki page (wiki tab above) for tutorial.
